@@ -1,0 +1,45 @@
+{
+    "id": 201904,
+    "title": "Middle Java developer",
+    "slug": "201904-middle-java-developer",
+    "company_name": "ThingsBoard, Inc.",
+    "long_description": "Requirements:\r\n\r\n2+ years of experience as a backend developer in Java tech stack (Java, Spring/Spring Boot, Docker, Kubernetes, PostgreSQL, Linux, Redis)\r\nExperience with microservice architecture;\r\nExperience with Kafka or similar technologies;\r\nDeep understanding of OOP;\r\nExperience with Git.\r\n\r\nNice to have:\r\n\r\nExperience with cloud services: AWS, GCE, or Azure;\r\nB.Sc. degree or equivalent in Computer Science, Mathematics, Physics, or Engineering.\r\n\r\nResponsibilities:\r\n\r\nDesign and development of MQTT broker;\r\nWriting clean and reusable code;\r\nSupport the existing functionality and improve it;\r\nDeep dive into Java performance improvements during heavy load testing.\r\n\r\nWe offer:\r\n\r\nWorking on an open-source IoT platform that has thousands of installations all over the world and 13000+ stars on GitHub;\r\nFull-time office work with flexible work hours;\r\nModern cutting-edge development stack;\r\nA high-professional team without bureaucracy and management overhead with 13+ years of experience;\r\nCareer growth opportunities and regular salary review;\r\nFree English classes;\r\nMedical Insurance;\r\nComfortable office and fridge with free beverages;\r\nTeam-buildings and corporate events.",
+    "category": {
+        "id": "java",
+        "name": "Java"
+    },
+    "location": "Kyiv",
+    "experience": 2,
+    "english": {
+        "id": "upper",
+        "name": "Upper-Intermediate"
+    },
+    "domain": "hardware",
+    "published": "2023-05-25T18:02:44.101998",
+    "recruiter": {
+        "id": 4329,
+        "name": "Oksana Kovalska",
+        "linkedin_headline": "HR Manager at ThingsBoard, Inc.",
+        "position": "HR Manager",
+        "company_name": "ThingsBoard, Inc.",
+        "public_url": "/r/4329-hr-manager-at-thingsboard-inc-/",
+        "badge": "top",
+        "picture_url": "https://p.djinni.co/fd/75b5d0d02846c4bbc0c3d49c853f3f/200.jpg",
+        "employer_website": "https://thingsboard.io",
+        "employer_about": "ThingsBoard, Inc. was founded in 2016. We develop software products for IoT (Internet of Things). Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's software is widely used by 500+ industrial customers with a wide range of requirements for device management, data processing, security, privacy, analysis, etc.\r\n\r\nThingsBoard, Inc. evolved from a startup to a leading IoT company with hundreds of customers and thousands of community users. Our R&D office is in Kyiv, Ukraine."
+    },
+    "is_online": true,
+    "dou_link": "https://jobs.dou.ua/companies/thingsboard-inc/",
+    "is_favorite": false,
+    "has_seen": true,
+    "has_applied": false,
+    "messagethread_url": "",
+    "views_count": 198,
+    "applications_count": 67,
+    "youtube": "",
+    "public_salary_min": null,
+    "public_salary_max": null,
+    "is_parttime": false,
+    "has_test": false,
+    "is_ukraine_only": true
+}

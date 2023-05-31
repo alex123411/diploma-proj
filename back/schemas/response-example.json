@@ -1,0 +1,274 @@
+{
+    "request": {
+        "query": "senior+go+developer",
+        "sites": [
+            "Djinni.co"
+        ]
+    },
+    "response": {
+        "stats": {
+            "djinniStats": {
+                "skills": [
+                    {
+                        "value": "golang",
+                        "count": 48
+                    },
+                    {
+                        "value": "go",
+                        "count": 32
+                    },
+                    {
+                        "value": "kubernetes",
+                        "count": 8
+                    },
+                    {
+                        "value": "python",
+                        "count": 5
+                    },
+                    {
+                        "value": "",
+                        "count": 4
+                    },
+                    {
+                        "value": "c#",
+                        "count": 3
+                    },
+                    {
+                        "value": "typescript",
+                        "count": 3
+                    },
+                    {
+                        "value": "java",
+                        "count": 3
+                    }
+                ],
+                "salaries": {
+                    "maxSalary": 10000,
+                    "median": 5575,
+                    "basedOnExperience": [
+                        {
+                            "experience": 3,
+                            "averageSalary": 5000
+                        },
+                        {
+                            "experience": 5,
+                            "averageSalary": 6025
+                        }
+                    ]
+                },
+                "companies": [
+                    {
+                        "value": "CoreTeka - http://coreteka.com/",
+                        "count": 11
+                    },
+                    {
+                        "value": "EPAM - http://epam.com",
+                        "count": 4
+                    },
+                    {
+                        "value": "Innovecs - https://www.innovecs.com/",
+                        "count": 1
+                    },
+                    {
+                        "value": "Nemesis - https://nemesiscorporation.com",
+                        "count": 1
+                    },
+                    {
+                        "value": "Pin Up Tech - https://pin-up.global/",
+                        "count": 1
+                    },
+                    {
+                        "value": "RecruitGarden - https://www.recruitgarden.com",
+                        "count": 1
+                    },
+                    {
+                        "value": "AllSTARSIT - https://www.allstarsit.com/",
+                        "count": 1
+                    },
+                    {
+                        "value": "Mellivora Software - https://www.mellivorasoft.com/",
+                        "count": 1
+                    },
+                    {
+                        "value": "Quickstaffing - https://www.quickstaffing.co/",
+                        "count": 1
+                    },
+                    {
+                        "value": "Grid Dynamics - https://www.griddynamics.com",
+                        "count": 1
+                    },
+                    {
+                        "value": "VERV Digital - https://verv.digital",
+                        "count": 1
+                    },
+                    {
+                        "value": "Capgemini Engineering Ukraine - https://www.capgemini-engineering.com.ua/",
+                        "count": 1
+                    },
+                    {
+                        "value": "EvoPlay - http://evoplay.com/",
+                        "count": 1
+                    },
+                    {
+                        "value": "Simplify - https://smplfy.eu",
+                        "count": 1
+                    },
+                    {
+                        "value": "First Bridge - https://firstbridge.io",
+                        "count": 1
+                    },
+                    {
+                        "value": "Aura - https://aura.com",
+                        "count": 1
+                    },
+                    {
+                        "value": "Luxoft - https://career.luxoft.com/locations/ukraine/",
+                        "count": 1
+                    }
+                ],
+                "experience": [
+                    {
+                        "value": "5",
+                        "count": 19
+                    },
+                    {
+                        "value": "3",
+                        "count": 12
+                    }
+                ],
+                "applicants": {
+                    "numberOfPostings": 21,
+                    "applicantsForOnePosting": 5
+                },
+                "datePosted": [
+                    {
+                        "value": "2023-05-29",
+                        "count": 15
+                    },
+                    {
+                        "value": "2023-05-03",
+                        "count": 3
+                    },
+                    {
+                        "value": "2023-05-12",
+                        "count": 2
+                    },
+                    {
+                        "value": "2023-05-09",
+                        "count": 2
+                    },
+                    {
+                        "value": "2023-05-22",
+                        "count": 2
+                    },
+                    {
+                        "value": "2023-05-26",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-17",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-08",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-04",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-16",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-05",
+                        "count": 1
+                    },
+                    {
+                        "value": "2023-05-25",
+                        "count": 1
+                    }
+                ],
+                "location": {
+                    "cities": [
+                        {
+                            "value": "Kyiv",
+                            "count": 16
+                        },
+                        {
+                            "value": "Vinnytsia",
+                            "count": 2
+                        },
+                        {
+                            "value": "Dnipro",
+                            "count": 2
+                        },
+                        {
+                            "value": "Ivano-Frankivsk",
+                            "count": 2
+                        },
+                        {
+                            "value": "Zhytomyr",
+                            "count": 2
+                        },
+                        {
+                            "value": "Zaporizhzhia",
+                            "count": 2
+                        },
+                        {
+                            "value": "Lviv",
+                            "count": 2
+                        },
+                        {
+                            "value": "Mykolaiv",
+                            "count": 2
+                        },
+                        {
+                            "value": "Odesa",
+                            "count": 2
+                        },
+                        {
+                            "value": "Ternopil",
+                            "count": 2
+                        },
+                        {
+                            "value": "Kharkiv",
+                            "count": 2
+                        },
+                        {
+                            "value": "Khmelnytskyi",
+                            "count": 2
+                        },
+                        {
+                            "value": "Cherkasy",
+                            "count": 2
+                        },
+                        {
+                            "value": "Chernihiv",
+                            "count": 2
+                        },
+                        {
+                            "value": "Chernivtsi",
+                            "count": 2
+                        },
+                        {
+                            "value": "Uzhhorod",
+                            "count": 2
+                        }
+                    ],
+                    "countries": [
+                        {
+                            "value": "Ukraine",
+                            "count": 16
+                        },
+                        {
+                            "value": "Abroad",
+                            "count": 15
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
