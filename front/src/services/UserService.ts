@@ -10,7 +10,7 @@ export interface User {
     degree: string;
     englishLevel: string;
     name: string;
-    skills: string;
+    skills: string[];
     experience: string;
     location: string;
     desiredSalary: string;
@@ -56,7 +56,8 @@ const UserService = {
         let user: User = emptyUser()
         await axios.get(`${BASE_URL}user`)
             .then(response => {
-                user = response.data.user
+                console.log(response.data.user)
+                user = parseUserToGet(response.data.user)
                 return user;
             })
             .catch(error => {
@@ -68,9 +69,10 @@ const UserService = {
 
     update: async (user: User) => {
         if (user.id == -1) return emptyUser()
-        await axios.put(`${BASE_URL}user`, { user: user })
+        console.log(formUserToSend(user))
+        await axios.put(`${BASE_URL}user`, { user: formUserToSend(user) })
             .then(response => {
-                user = response.data.updatedUser
+                user = parseUserToGet(response.data.updatedUser)
                 return user;
             })
             .catch(error => {
@@ -88,13 +90,31 @@ export const emptyUser = (): User => ({
     password: '',
     name: '',
     englishLevel: '',
-    skills: '',
+    skills: [],
     experience: '',
     updatedAt: '',
     createdAt: '',
     location: '',
     desiredSalary: ''
 });
+
+const formUserToSend = (user: User) => ({
+    ...user,
+    skills: formStringFromArr(user.skills ?? [])
+});
+
+const parseUserToGet = (user: any) => ({
+    ...user,
+    skills: user.skills?.split(';').filter((value: string) => value.trim() !== "") ?? [],
+});
+
+const formStringFromArr = (arr: string[]) => {
+    let finalStr = ''
+    arr.forEach(element => {
+        finalStr += `;${element}`
+    });
+    return finalStr
+}
 
 const parseToken = (token: string) => {
     const base64Url = token.split('.')[1];

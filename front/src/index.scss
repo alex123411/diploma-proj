@@ -1,8 +1,32 @@
-.dropdown-btn{
+.dropdown-btn {
     width: 100px;
 }
 
-.button-edit{
+.button-edit {
     margin-right: 1rem;
     min-width: 81px;
+}
+
+.input-group-text {
+    min-width: 150px;
+}
+
+.skill-btn-add,
+.skill-btn-remove {
+    min-width: 40px !important;
+}
+
+.input-skill-remove {
+    min-width: 150px !important;
+    max-width: fit-content;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two columns with equal width */
+    gap: 10px;
+    /* Adjust the gap between columns as desired */
+    justify-content: center;
+    /* Align content horizontally to center */
 }
