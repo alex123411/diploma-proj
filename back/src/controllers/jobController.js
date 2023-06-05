@@ -7,7 +7,7 @@ const {
 } = require('../services/jobsScrapingModule/jobService');
 
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const {
             sites,

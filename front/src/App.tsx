@@ -6,6 +6,8 @@ import UserService from './services/UserService';
 
 const App: FC = () => {
 
+  UserService.isLoggedIn()
+
   return (
     <div>
       <Header />

@@ -8,9 +8,7 @@ interface Props extends PropsWithChildren {
 
 const SearchPage: FC<Props> = ({ children, className, ...props }) => {
     return (
-        <div {...props} className={className}>
-            <MainForm className='mt-3' />
-        </div>
+        <MainForm className='mt-3' />
     )
 }
 

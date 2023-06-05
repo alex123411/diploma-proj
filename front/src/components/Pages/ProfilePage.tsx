@@ -2,38 +2,12 @@ import { ChangeEvent, ChangeEventHandler, FC, PropsWithChildren, useEffect, useS
 import ContentBox from "../UI/ContentBox";
 import UserService, { User, emptyUser } from "../../services/UserService";
 import { useNavigate } from "react-router-dom";
+import { allCitiesInUkraine } from "../../utils/locations";
 
 
 interface Props extends PropsWithChildren {
     className?: string;
 }
-
-const allCitiesInUkraine = [
-    "Cherkasy ",
-    "Chernihiv ",
-    "Chernivtsi ",
-    "Dnipro",
-    "Donetsk ",
-    "Ivano-Frankivsk ",
-    "Kharkiv ",
-    "Kherson ",
-    "Khmelnytskyi ",
-    "Kropyvnytskyi",
-    "Kyiv ",
-    "Luhansk ",
-    "Lviv ",
-    "Mykolaiv ",
-    "Odesa ",
-    "Poltava ",
-    "Rivne ",
-    "Sumy ",
-    "Ternopil ",
-    "Vinnytsia",
-    "Lutsk ",
-    "Uzhhorod ",
-    "Zaporizhzhia ",
-    "Zhytomyr "
-]
 
 const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
     const [userData, setUserData] = useState<User>(emptyUser);

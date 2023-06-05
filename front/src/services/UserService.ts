@@ -56,7 +56,6 @@ const UserService = {
         let user: User = emptyUser()
         await axios.get(`${BASE_URL}user`)
             .then(response => {
-                console.log(response.data.user)
                 user = parseUserToGet(response.data.user)
                 return user;
             })
@@ -69,7 +68,6 @@ const UserService = {
 
     update: async (user: User) => {
         if (user.id == -1) return emptyUser()
-        console.log(formUserToSend(user))
         await axios.put(`${BASE_URL}user`, { user: formUserToSend(user) })
             .then(response => {
                 user = parseUserToGet(response.data.updatedUser)

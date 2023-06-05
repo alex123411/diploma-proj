@@ -9,7 +9,7 @@ const queryAllJobs = async (sites, query) => {
 
     if(sites.includes("Djinni.co")) {
         const djinniStats = await fetchDJINNIJobs(query);
-        console.log(djinniStats)
+        // console.log(djinniStats)
 
         result.djinniStats = djinniStats
     }
