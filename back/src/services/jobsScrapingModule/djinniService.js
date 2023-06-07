@@ -5,6 +5,7 @@ const Job = require('../../models/jobModel');
 const Recruiter = require('../../models/recruiterModel');
 const Category = require('../../models/categoryModel');
 const EnglishLevel = require('../../models/englishLevelModel');
+const UserRequest = require('../../models/requestModel');
 
 const { generateTable } = require('../statisticsModule/uniqueValueCount');
 const { salaryCalculations } = require('../statisticsModule/salaryCalculations');
@@ -13,7 +14,7 @@ const { salaryCalculationsMedian } = require('../statisticsModule/salaryCalculat
 const DJINNI_URL = "https://djinni.co"
 
 
-const fetchAllJobs = async (query) => {
+const fetchAllJobs = async (query, userID) => {
 
     let skills = []
     let salaries = [];
@@ -135,62 +136,28 @@ const fetchAllJobs = async (query) => {
         console.log("ERR", err)
         return []
     }
-
-    // let reqURL = DJINNI_URL
-    // console.log(`sending request to: ${reqURL}`)
-    // axios.get(reqURL)
-    //     .then(async (res) => {
-    //         const data = res.data
-    //         const jobs = data.results
-    //         const count = data.count
-
-    //         let recruiters = []
-    //         let categories = []
-    //         let englishLevels = []
-
-    //         jobs.forEach(job => {
-    //             recruiters.push(job.recruiter)
-    //             categories.push(job.category)
-    //             englishLevels.push(job.english)
-    //         });
-
-    //         await insertData(
-    //             EnglishLevel,
-    //             removeDuplicates(englishLevels)
-    //         )
-    //         await insertData(
-    //             Category,
-    //             removeDuplicates(categories)
-    //         )
-    //         await insertData(
-    //             Recruiter,
-    //             removeDuplicates(recruiters)
-    //         )
-
-
-    // await bulkCreate(Job, jobs)
-
-    //     })
-    //     .catch(error => {
-    //         console.error('Error:', error);
-    //     });
-
 }
 
 
 
 const insertData = async (Model, Data) => {
+
     Data.forEach(async elem => {
-        await Model
-            .findOrCreate({
-                where: { id: elem.id },
-                defaults: {
-                    ...elem
-                }
-            })
-            .catch(err => {
-                console.error('Error:', err);
-            });
+        try {
+            console.log("INSERTING" + elem.id)
+            await Model
+                .findOrCreate({
+                    where: { id: elem.id },
+                    defaults: {
+                        ...elem
+                    }
+                })
+                .catch(err => {
+                    console.error('Error:', err);
+                });
+        } catch (err) {
+            console.error('err' + err)
+        }
     });
 }
 
@@ -249,7 +216,10 @@ const scrapeDataFromJobsOnPage = async (jobsLinks) => {
     let countries = [];
     let englishLevels = [];
 
-
+    let recruitersDB = []
+    let categoriesDB = []
+    let englishLevelsDB = []
+    let jobs = []
     // Create an array to store the promises
     const htmlScrapingPromises = jobsLinks.map((jobLink) => {
         const fullJobLink = DJINNI_URL + jobLink;
@@ -315,6 +285,13 @@ const scrapeDataFromJobsOnPage = async (jobsLinks) => {
 
                 // English Level
                 if (job.english.name) englishLevels.push(job.english.name)
+
+
+                // ADDING DATA TO DB
+                recruitersDB.push(job.recruiter)
+                categoriesDB.push(job.category)
+                englishLevelsDB.push(job.english)
+                jobs.push(job)
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -326,6 +303,23 @@ const scrapeDataFromJobsOnPage = async (jobsLinks) => {
     await Promise.all(htmlScrapingPromises);
 
     await Promise.all(apiScrapingPromises);
+
+    // PUSHING SCRAPED DATA TO DB
+    await Promise.all([
+        insertData(
+            EnglishLevel,
+            removeDuplicates(englishLevels)
+        ),
+        await insertData(
+            Category,
+            removeDuplicates(categoriesDB)
+        ),
+        await insertData(
+            Recruiter,
+            removeDuplicates(recruitersDB)
+        ),
+        await insertData(Job, jobs)
+    ])
 
     const stats = {
         skills,

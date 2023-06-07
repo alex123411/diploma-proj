@@ -28,6 +28,7 @@ interface Props extends PropsWithChildren {
     className?: string;
     stats: PositionStats;
     positionToSearch: string;
+    userData: User
 }
 
 
@@ -58,21 +59,7 @@ const optionsSalaries = {
 
 
 
-const PositionStatistics: FC<Props> = ({ positionToSearch, stats, children, className, ...props }) => {
-
-    const [userData, setUserData] = useState<User>(emptyUser);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!UserService.isLoggedIn()) navigate('/auth')
-        else {
-            const fetchUserData = async () => {
-                const user: User = await UserService.getUserData()
-                setUserData(user)
-            }
-            fetchUserData();
-        }
-    }, []);
+const PositionStatistics: FC<Props> = ({ userData, positionToSearch, stats, children, className, ...props }) => {
 
     const userHasSkill = (skill: string) => {
         for (let i = 0; i < userData.skills.length; i++) {

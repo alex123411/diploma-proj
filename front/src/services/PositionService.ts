@@ -58,20 +58,20 @@ const PositionService = {
 
     getPositionStatsData: async (query: string) => {
         let stats: PositionStats = { ...getEmptyPositionStats() }
-        stats = statsMOCK
-        // await axios.post(`${BASE_URL}job`, {
-        //     "query": query.trim().replaceAll(' ', '+'),
-        //     "sites": ["Djinni.co"]
-        // })
-        //     .then(response => {
-        //         stats = response.data.stats.djinniStats;  
-        //         console.log(stats)
-        //         return stats;
-        //     })
-        //     .catch(error => {
-        //         console.error('Failed to fetch position data:', error);
-        //         return {}
-        //     });
+        // stats = statsMOCK
+        await axios.post(`${BASE_URL}job`, {
+            "query": query.trim().replaceAll(' ', '+'),
+            "sites": ["Djinni.co"]
+        })
+            .then(response => {
+                stats = response.data.stats.djinniStats;  
+                console.log(stats)
+                return stats;
+            })
+            .catch(error => {
+                console.error('Failed to fetch position data:', error);
+                return {}
+            });
         return stats
     }
 

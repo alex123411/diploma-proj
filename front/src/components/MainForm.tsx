@@ -1,15 +1,21 @@
-import { FC, PropsWithChildren, useState } from 'react'
+import { FC, PropsWithChildren, useEffect, useState } from 'react'
 import PositionService, { PositionStats } from '../services/PositionService';
 import { useFetching } from '../hooks/useFetching';
 import Loading from './UI/Loading';
 import PositionStatistics from './PositionStatistics';
 import ContentBox from './UI/ContentBox';
+import UserService, { LastReq, User, emptyUser } from '../services/UserService';
+import { useNavigate } from 'react-router-dom';
+import { formToJSON } from 'axios';
 
 interface Props extends PropsWithChildren {
   className?: string;
 }
 
 const MainForm: FC<Props> = ({ className, ...props }) => {
+
+  const [userData, setUserData] = useState<User>(emptyUser);
+  const [lastReqsData, setLastReqsData] = useState<LastReq[]>([]);
 
   const [positionToSearch, setPositionToSearch] = useState('');
   const [positionToSearchProp, setPositionToSearchProp] = useState('');
@@ -21,13 +27,38 @@ const MainForm: FC<Props> = ({ className, ...props }) => {
       setPositionStats(response)
     }
   );
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!UserService.isLoggedIn()) navigate('/auth')
+    else {
+      const fetchUserData = async () => {
+        const user: User = await UserService.getUserData()
+        setUserData(user)
+        const lastReqs: LastReq[] = await UserService.getUserLastReqsData()
+        setLastReqsData(lastReqs)
+      }
+      fetchUserData();
+    }
+  }, []);
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (positionToSearch != '') {
       fetchPostitionStats()
+        .then(async () => {
+          const lastReqs: LastReq[] = await UserService.getUserLastReqsData()
+          setLastReqsData(lastReqs)
+        })
       setPositionToSearchProp(positionToSearch)
     }
+  }
+
+  const handleShowStat = (jsonStat: string, title: string) => {
+    const stat: PositionStats = JSON.parse(jsonStat).djinniStats
+
+    setPositionStats(stat)
+    setPositionToSearchProp(title)
   }
 
   return (
@@ -52,6 +83,16 @@ const MainForm: FC<Props> = ({ className, ...props }) => {
         </ContentBox>
         <ContentBox className='col-4 ms-auto d-flex flex-column align-items-center'>
           <h5>Попередні запити</h5>
+          <div className="list-group">
+            {
+              lastReqsData?.map(elem =>
+
+                <a className='prev-req-itm list-group-item list-group-item-action' onClick={() => handleShowStat(elem.stats, elem.query)}>{elem.query} - {elem.createdAt.split('T')[0]}</a>
+
+              )
+            }
+          </div>
+
         </ContentBox>
       </div>
 
@@ -63,7 +104,7 @@ const MainForm: FC<Props> = ({ className, ...props }) => {
           ?
           <div className='d-flex flex-column align-items-center'><Loading /></div>
           :
-          <PositionStatistics positionToSearch={positionToSearchProp} stats={positionStats} />
+          <PositionStatistics userData={userData} positionToSearch={positionToSearchProp} stats={positionStats} />
       }
     </div>
 

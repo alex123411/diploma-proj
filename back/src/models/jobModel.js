@@ -15,7 +15,7 @@ const Job = sq.define('job', {
     title: DataTypes.STRING,
     slug: DataTypes.STRING,
     company_name: DataTypes.STRING,
-    long_description: DataTypes.STRING,
+    // long_description: DataTypes.STRING,
 
     categoryId: {
         type: DataTypes.STRING,

@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         console.log(req.body)
         if (!query || !sites) throw new badRequestError(`Please provide body: {sites: [...], query: '...'}`);
 
-        const stats = await queryAllJobs(sites, query);
+        const stats = await queryAllJobs(sites, query, req.user.userId);
 
         res.status(200).json({ stats });
     } catch (err) {

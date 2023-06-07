@@ -1,5 +1,6 @@
 const { sq } = require('./index');
 const { DataTypes } = require('sequelize');
+// const UserRequest = require('./requestModel');
 
 const User = sq.define('user', {
     id: {
@@ -28,6 +29,8 @@ const User = sq.define('user', {
     timestamps: true,
     freezeTableName: true
 });
+
+// User.belongsTo(UserRequest)
 
 User
     .sync()

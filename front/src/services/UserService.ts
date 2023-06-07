@@ -18,6 +18,15 @@ export interface User {
     createdAt: string;
 }
 
+export interface LastReq {
+    id: number;
+    userId: number;
+    query: string;
+    stats: string;
+    createdAt: string;
+    updatedAt: string;
+}
+
 const UserService = {
     isLoggedIn: () => {
         const token = localStorage.getItem('Authorization');
@@ -64,6 +73,22 @@ const UserService = {
                 return {}
             });
         return user
+    },
+
+    getUserLastReqsData: async () => {
+        let lastReqs: LastReq[] = [];
+        await axios.get(`${BASE_URL}user/reqs`)
+            .then(response => {
+                lastReqs = response.data.lastReqs
+                return lastReqs;
+            })
+            .catch(error => {
+                console.error('Failed to fetch user last reqs data:', error);
+                return {}
+            });
+        console.log(lastReqs)
+
+        return lastReqs
     },
 
     update: async (user: User) => {

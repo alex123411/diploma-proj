@@ -1,5 +1,6 @@
 const User = require('../models/userModel');
-const { badRequestError } = require('../errors')
+const UserRequest = require('../models/requestModel');
+// const { badRequestError } = require('../errors')
 
 const getUser = async (userId) => {
   try {
@@ -9,6 +10,16 @@ const getUser = async (userId) => {
     };
 
     return user;
+
+  } catch (err) {
+    return null;
+  }
+}
+
+const getUserReqs = async (userId) => {
+  try {
+    const lastReqs = await UserRequest.findAll({ where: { userId: userId } })
+    return lastReqs;
 
   } catch (err) {
     return null;
@@ -33,5 +44,6 @@ const updateUser = async (user) => {
 
 module.exports = {
   getUser,
-  updateUser
+  updateUser,
+  getUserReqs
 };
