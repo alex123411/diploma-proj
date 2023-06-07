@@ -1,12 +1,15 @@
 import { FC, PropsWithChildren, useEffect, useState } from 'react'
-import PositionService, { PositionStats } from '../services/PositionService';
+import PositionService from '../services/PositionService';
 import { useFetching } from '../hooks/useFetching';
 import Loading from './UI/Loading';
 import PositionStatistics from './PositionStatistics';
 import ContentBox from './UI/ContentBox';
-import UserService, { LastReq, User, emptyUser } from '../services/UserService';
+import UserService, { emptyUser } from '../services/UserService';
 import { useNavigate } from 'react-router-dom';
 import { formToJSON } from 'axios';
+import { User } from '../models/userModel';
+import { LastReq } from '../models/requestModel';
+import { PositionStats } from '../models/jobStatisticsModel';
 
 interface Props extends PropsWithChildren {
   className?: string;

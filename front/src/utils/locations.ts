@@ -1,4 +1,4 @@
-import { ArrElem } from "../services/PositionService";
+import { ArrElem } from "../models/jobStatisticsModel";
 
 export const allCitiesInUkraine = [
     "Cherkasy",

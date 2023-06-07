@@ -1,9 +1,7 @@
 import { FC, PropsWithChildren, useState } from "react"
-import MainForm from "../MainForm";
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import UserService from "../../services/UserService";
-
 
 interface Props extends PropsWithChildren {
     className?: string;

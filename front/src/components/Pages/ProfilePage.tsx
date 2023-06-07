@@ -1,8 +1,9 @@
 import { ChangeEvent, ChangeEventHandler, FC, PropsWithChildren, useEffect, useState } from "react"
 import ContentBox from "../UI/ContentBox";
-import UserService, { User, emptyUser } from "../../services/UserService";
+import UserService, { emptyUser } from "../../services/UserService";
 import { useNavigate } from "react-router-dom";
 import { allCitiesInUkraine } from "../../utils/locations";
+import { User } from "../../models/userModel";
 
 
 interface Props extends PropsWithChildren {

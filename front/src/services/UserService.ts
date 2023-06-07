@@ -1,31 +1,9 @@
 
 import axios from 'axios';
+import { User } from '../models/userModel';
+import { LastReq } from '../models/requestModel';
 
 const BASE_URL = "http://localhost:3000/api/"
-
-export interface User {
-    id: number;
-    email: string;
-    password: string;
-    degree: string;
-    englishLevel: string;
-    name: string;
-    skills: string[];
-    experience: string;
-    location: string;
-    desiredSalary: string;
-    updatedAt: string;
-    createdAt: string;
-}
-
-export interface LastReq {
-    id: number;
-    userId: number;
-    query: string;
-    stats: string;
-    createdAt: string;
-    updatedAt: string;
-}
 
 const UserService = {
     isLoggedIn: () => {

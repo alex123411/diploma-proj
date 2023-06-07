@@ -1,4 +1,4 @@
-import { ArrElem } from "../services/PositionService"
+import { ArrElem } from "../models/jobStatisticsModel"
 import { dateNumToName, monthNumToColor } from "./dates"
 
 const bgColors = [

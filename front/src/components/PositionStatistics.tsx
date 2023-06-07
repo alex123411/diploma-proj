@@ -1,5 +1,4 @@
-import { FC, PropsWithChildren, useEffect, useState } from "react"
-import { PositionStats } from "../services/PositionService";
+import { FC, PropsWithChildren } from "react"
 import ContentBox from "./UI/ContentBox";
 import {
     Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale,
@@ -9,10 +8,10 @@ import {
 } from 'chart.js';
 import { Pie, Bar } from 'react-chartjs-2';
 import { barCharts, statsToBarChart, statsToPieChart } from "../utils/graphs";
-import UserService, { User, emptyUser } from "../services/UserService";
-import { useNavigate } from "react-router-dom";
 import { getAverageLevel, sortEnglishLevels, valueToEnglishLevel } from "../utils/english";
 import UkraineMap from "./UkraineMap";
+import { PositionStats } from "../models/jobStatisticsModel";
+import { User } from "../models/userModel";
 
 ChartJS.register(
     CategoryScale,

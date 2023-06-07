@@ -3,9 +3,8 @@ import { FC, useEffect, useRef, useState } from "react";
 import HighchartsReact from 'highcharts-react-official'
 import * as Highcharts from 'highcharts/highmaps';
 import mapDataUkraine from '@highcharts/map-collection/countries/ua/ua-all.geo.json';
-import { PositionStats } from "../services/PositionService";
 import { fillMapDataUkraine } from "../utils/locations";
-
+import { PositionStats } from "../models/jobStatisticsModel";
 
 
 interface Props {
@@ -13,9 +12,6 @@ interface Props {
     chartProps?: HighchartsReact.Props;
     stats: PositionStats
 }
-
-
-
 
 const UkraineMap: FC<Props> = ({ stats, ...props }) => {
 
