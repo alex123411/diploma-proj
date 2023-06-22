@@ -107,14 +107,15 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                     {`Hello, ${userData.name} !`}
                 </h1>
                 <div className='d-flex'>
-                    <button className="btn btn-primary button-edit" onClick={handleSaveEdit}>Save Edit</button>
-                    <button className="btn btn-warning" onClick={handleLogout}>Log out</button>
+                    <button className="btn btn-primary button-edit" onClick={handleSaveEdit}>Зберегти Зміни Профілю</button>
+                    <button className="btn btn-warning" onClick={handleLogout}>Вийти з Системи</button>
                 </div>
             </div>
             <ContentBox>
-                <h2 className="mb-3">General Information About You</h2>
+                <h2 className="mb-3">Загальна Інформація Про Вас</h2>
                 <div className="input-group mb-3">
-                    <label className="input-group-text" htmlFor="inputGroupSelect01">Highest Degree</label>
+                    <label className="input-group-text" htmlFor="inputGroupSelect01">
+                        Ступінь освіти:</label>
                     <select
                         name="degree"
                         value={userData.degree ?? "0"}
@@ -131,7 +132,8 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                     </select>
                 </div>
                 <div className="input-group mb-3">
-                    <label className="input-group-text" htmlFor="inputGroupSelect02">Experience</label>
+                    <label className="input-group-text" htmlFor="inputGroupSelect02">
+                        Досвід Роботи</label>
                     <select
                         name="experience"
                         value={userData.experience ?? "0"}
@@ -148,7 +150,8 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                 </div>
 
                 <div className="input-group mb-3">
-                    <label className="input-group-text" htmlFor="inputGroupSelect03">Desired Salary $</label>
+                    <label className="input-group-text" htmlFor="inputGroupSelect03">
+                        Бажана Заробітня Плата $</label>
                     <select
                         name="desiredSalary"
                         value={userData.desiredSalary ?? "0"}
@@ -167,7 +170,8 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                 </div>
 
                 <div className="input-group mb-3">
-                    <label className="input-group-text" htmlFor="inputGroupSelect04">English Level</label>
+                    <label className="input-group-text" htmlFor="inputGroupSelect04">
+                        Рівень англійської мови:</label>
                     <select
                         name="englishLevel"
                         value={userData.englishLevel ?? "0"}
@@ -185,7 +189,8 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                     </select>
                 </div>
                 <div className="input-group mb-3">
-                    <label className="input-group-text" htmlFor="inputGroupSelect05">Current Location</label>
+                    <label className="input-group-text" htmlFor="inputGroupSelect05">
+                        Місце Проживання</label>
                     <select
                         name="location"
                         value={userData.location ?? "0"}
@@ -202,7 +207,7 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                 </div>
             </ContentBox>
             <ContentBox>
-                <h2 className="mb-3">Add Your Skills</h2>
+                <h2 className="mb-3">Додайте Свої Навички</h2>
                 <div className="input-group mb-3">
                     <input
                         type="text"
@@ -214,7 +219,7 @@ const ProfilePage: FC<Props> = ({ children, className = "", ...props }) => {
                         className="btn btn-success skill-btn-add"
                         onClick={handleAddSkill}
                     >
-                        Add
+                        Додати
                     </button>
                 </div>
                 <div className="skills-grid">

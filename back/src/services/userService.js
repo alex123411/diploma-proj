@@ -18,7 +18,7 @@ const getUser = async (userId) => {
 
 const getUserReqs = async (userId) => {
   try {
-    const lastReqs = await UserRequest.findAll({ where: { userId: userId } })
+    const lastReqs = (await UserRequest.findAll({ where: { userId: userId } })).reverse()
     return lastReqs;
 
   } catch (err) {

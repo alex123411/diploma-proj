@@ -20,7 +20,7 @@ const UserRequest = sq.define('user_request', {
         allowNull: false
     },
     stats: {
-        type: DataTypes.STRING(16000),
+        type: DataTypes.TEXT(100000),
         allowNull: false,
     }
 }, {

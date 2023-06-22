@@ -90,7 +90,10 @@ const MainForm: FC<Props> = ({ className, ...props }) => {
             {
               lastReqsData?.map(elem =>
 
-                <a className='prev-req-itm list-group-item list-group-item-action' onClick={() => handleShowStat(elem.stats, elem.query)}>{elem.query} - {elem.createdAt.split('T')[0]}</a>
+                <a
+                  className='prev-req-itm list-group-item list-group-item-action'
+                  onClick={() => handleShowStat(elem.stats, elem.query)}>{elem.query} - {elem.createdAt.split('T')[0]}
+                </a>
 
               )
             }

@@ -68,20 +68,23 @@ const AuthPage: FC<Props> = ({ children, className, ...props }) => {
     };
 
     return (
-        <div className="d-flex flex-column">
-            <h2>Login or Register</h2>
-            {errorMessage && <div>{errorMessage}</div>}
-            {successMessage && <div>{successMessage}</div>}
-            <div className="form-group mb-2">
-                <input className="form-control" type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
+        <div>
+            <h2>Авторизуйтесь або Зареєструйтесь</h2>
+            <div className="d-flex flex-column justify-content-center login-form">
 
-            </div>
-            <div className="form-group mb-2">
-                <input className="form-control" type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
+                {errorMessage && <div>{errorMessage}</div>}
+                {successMessage && <div>{successMessage}</div>}
+                <div className="form-group mb-2">
+                    <input className="form-control" type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
 
+                </div>
+                <div className="form-group mb-2">
+                    <input className="form-control" type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
+
+                </div>
+                <button className="btn btn-primary mb-2" onClick={handleLogin}>Ввійти</button>
+                <button className="btn btn-primary" onClick={handleRegister}>Зареєструватись</button>
             </div>
-            <button className="btn btn-primary mb-2" onClick={handleLogin}>Login</button>
-            <button className="btn btn-primary" onClick={handleRegister}>Register</button>
         </div>
     );
 }

@@ -46,7 +46,7 @@ const EditUserForm: React.FC = () => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Degree:
+                Ступінь освіти:
                 <input
                     type="text"
                     name="degree"
@@ -56,7 +56,7 @@ const EditUserForm: React.FC = () => {
             </label>
 
             <label>
-                English Level:
+                Рівень англійської мови:
                 <input
                     type="text"
                     name="englishLevel"

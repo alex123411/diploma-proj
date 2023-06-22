@@ -18,7 +18,8 @@ const queryAllJobs = async (sites, query, userID) => {
     }
 
     try {
-        await UserRequest.create({ userId: userID, query: query.replace('+', ' '), stats: JSON.stringify(result) })
+        const q = query.replaceAll('+', ' ');
+        await UserRequest.create({ userId: userID, query: q, stats: JSON.stringify(result) })
     } catch (err) {
         console.error('ERROR ' + err)
     }
