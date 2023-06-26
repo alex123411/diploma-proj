@@ -37,7 +37,7 @@ const UkraineMap: FC<Props> = ({ stats, ...props }) => {
             }]
         }
         setOptions(opts)
-    }, []);
+    }, [stats]);
 
     return (
         <div id='mapChart'>

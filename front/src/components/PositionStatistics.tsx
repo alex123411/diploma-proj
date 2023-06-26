@@ -142,7 +142,7 @@ const PositionStatistics: FC<Props> = ({ userData, positionToSearch, stats, chil
                     </div>
                     <div className="col-4">
                         <h5 className="text-center">Рівень англійської мови</h5>
-                        <span>Ваш Рівень англійської мови <b>{valueToEnglishLevel[userData.englishLevel]} - {getAverageLevel(stats.english) <= parseInt(userData.englishLevel) ? 'вище' : 'нижче'}</b> ніж зазвичай вимагається</span>
+                        <span>Ваш Рівень англійської мови <b>{valueToEnglishLevel[userData.englishLevel]} - {getAverageLevel(stats.english) <= parseInt(userData.englishLevel) ? 'вище або не нижче' : 'нижче'}</b> ніж зазвичай вимагається</span>
                         <ul className="mt-2">
                             {sortEnglishLevels(stats.english).map((elem, i) =>
                                 <li
