@@ -2,6 +2,7 @@
 Web application designated to scrap data from job posting websites 
 
   **Abstract**
+  
   This diploma project is devoted to the creation of a web application for
 the analysis of job portals.
   As part of the implementation of the project, a comparative analysis of
