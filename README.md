@@ -1,7 +1,7 @@
 # diploma-proj
 Web application designated to scrap data from job posting websites 
 
-  **Abstract**
+  **Abstract:**
   
   This diploma project is devoted to the creation of a web application for
 the analysis of job portals.
